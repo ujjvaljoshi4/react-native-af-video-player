@@ -89,7 +89,7 @@ class Video extends Component {
   onLoad(data) {
     if (!this.state.loading) return
     this.props.onLoad(data)
-    const { height, width } = data.naturalSize   
+    const { height, width } = data.naturalSize
     const ratio = height === 'undefined' && width === 'undefined' ?
       (9 / 16) : (height / width)
     const inlineHeight = this.props.lockRatio ?
@@ -318,7 +318,7 @@ class Video extends Component {
         <Icons
           name="replay"
           size={60}
-          color={this.props.theme}
+          color={'white'}
           onPress={() => this.setState({ renderError: false })}
         />
       </Animated.View>
@@ -375,7 +375,7 @@ class Video extends Component {
           fullScreen ? null : style
         ]}
       >
-        <StatusBar hidden={fullScreen} />
+        <StatusBar hidden={true} />
         {
           ((loading && placeholder) || currentTime < 0.01) &&
           <Image resizeMode="cover" style={styles.image} {...checkSource(placeholder)} />
